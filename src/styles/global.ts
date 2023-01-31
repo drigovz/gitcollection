@@ -37,4 +37,14 @@ export const GlobalStyle = createGlobalStyle`
   a {
     text-decoration: none;
   }
+
+  ::-moz-selection {
+    color: #fff;
+    background: #36382e;
+  }
+
+    ::selection {
+      color: #fff;
+      background: #36382e;
+    }
 `;
