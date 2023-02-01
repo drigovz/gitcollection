@@ -6,7 +6,7 @@ import { Input } from '../../components/Input';
 export const Dashboard: React.FC = () => {
   return (
     <>
-      <Img src="../../assets/background.svg" alt="Logo" title="Logo" />
+      <Img src="../../assets/logo.png" alt="Logo" title="Logo" />
       <Title>Catálogo de repositórios do Github</Title>
       <Form>
         <Input type="text" placeholder="username/repository_name" />
