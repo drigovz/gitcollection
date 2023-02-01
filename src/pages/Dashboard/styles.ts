@@ -47,3 +47,58 @@ export const Form = styled.form`
     }
   }
 `;
+
+export const Repos = styled.section`
+  margin-top: 80px;
+  max-width: 700px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
+  a {
+    background: #fff;
+    border-radius: 5px;
+    width: 100%;
+    padding: 24px;
+    display: flex;
+    align-items: center;
+    transition: transform 0.6s;
+
+    &:hover {
+      transform: translateX(12px);
+    }
+
+    /* edit second a tag inside other a tag */
+    & + a {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+    }
+
+    img {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+    }
+
+    aside {
+      margin: 0 16px;
+      flex: 1;
+
+      strong {
+        font-size: 20px;
+        color: #3d3d4d;
+      }
+
+      p {
+        font-size: 18px;
+        color: #a8a8b3;
+        margin-top: 4px;
+      }
+    }
+
+    img,
+    svg {
+      margin-left: auto;
+      color: #cdcdc6;
+    }
+  }
+`;
