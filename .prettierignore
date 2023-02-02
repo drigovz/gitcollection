@@ -1,4 +1,8 @@
-node_modules
+.yarn
 .next
+.husky
+.jest
 dist
 build
+node_modules
+coverage

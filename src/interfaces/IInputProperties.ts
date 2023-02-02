@@ -5,4 +5,5 @@ export default interface IInputProperties {
   title?: string;
   placeholder?: string;
   value?: string;
+  onChange?: any;
 }
