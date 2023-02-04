@@ -60,17 +60,11 @@ export const Repos = styled.section`
     padding: 24px;
     display: flex;
     align-items: center;
+    margin-bottom: 10px;
     transition: transform 0.6s;
 
     &:hover {
       transform: translateX(12px);
-    }
-
-    /* edit second a tag inside other a tag */
-    & + a {
-      width: 64px;
-      height: 64px;
-      border-radius: 50%;
     }
 
     img {

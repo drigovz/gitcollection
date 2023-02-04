@@ -18,8 +18,13 @@ export const Dashboard: React.FC = () => {
   async function handleSubmitForm(event: React.FormEvent<HTMLFormElement>): Promise<void> {
     event.preventDefault();
     const response = await api.get<IGithubRepository>(`repos/${userRepo}`);
+    const repository = response.data;
 
-    console.log(response);
+    setRepos([repository, ...repos]);
+
+    // clean state of repos
+    setUserRepo('');
+    return;
   }
 
   return (
@@ -33,15 +38,18 @@ export const Dashboard: React.FC = () => {
       </Form>
 
       <Repos>
-        <a href="/repositories">
-          <Img src="https://avatars.githubusercontent.com/u/6412038?s=200&v=4" alt="Logo" title="Logo" />
-          <aside>
-            <strong>drigovz/gitcollecion</strong>
-            <p>Repository of mini-course of React.Js</p>
-          </aside>
+        {repos.map(repo => (
+          <a href="/repositories" key={repo.full_name}>
+            <Img src={repo.owner.avatar_url} alt={repo.owner.login} title={repo.owner.login} />
 
-          <FiChevronRight size={20} />
-        </a>
+            <aside>
+              <strong>{repo.full_name}</strong>
+              <p>{repo.description}</p>
+            </aside>
+
+            <FiChevronRight size={20} />
+          </a>
+        ))}
       </Repos>
     </>
   );
