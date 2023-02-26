@@ -96,3 +96,52 @@ export const Repos = styled.section`
     }
   }
 `;
+
+export const Error = styled.section`
+  width: 360px;
+  margin: 0 auto;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  background: #ff0000;
+  color: #fff;
+  border-radius: 5px;
+  padding: 24px 10px 24px 10px;
+  position: absolute;
+  left: 40%;
+  text-align: center;
+  font-weight: bold;
+  transition: transform 0.6s;
+  animation: show-up 1.5s forwards;
+  /* animation: show-down 1.5s forwards; */
+
+  @keyframes show-up {
+    from {
+      opacity: 0;
+      transform: translate3d(0, -30px, 0);
+    }
+
+    to {
+      opacity: 1;
+      -webkit-transform: translateY(-48px);
+      -moz-transform: translateY(-48px);
+      -ms-transform: translateY(-48px);
+      -o-transform: translateY(-48px);
+      transform: translateY(-48px);
+    }
+  }
+
+  @keyframes show-down {
+    from {
+      opacity: 1;
+      transform: translate3d(0, -30px, 0);
+    }
+
+    to {
+      opacity: 0;
+      -webkit-transform: translateY(38px);
+      -moz-transform: translateY(38px);
+      -ms-transform: translateY(38px);
+      -o-transform: translateY(38px);
+      transform: translateY(38px);
+    }
+  }
+`;

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Title, Form, Repos } from './styles';
+import { Title, Form, Repos, Error } from './styles';
 import { Img } from '../../components/Img';
 import { Input } from '../../components/Input';
 import logo from '../../assets/logo.svg';
@@ -10,6 +10,7 @@ import IGithubRepository from '../../interfaces/IGithubRepository';
 export const Dashboard: React.FC = () => {
   const [repos, setRepos] = React.useState<IGithubRepository[]>([]);
   const [userRepo, setUserRepo] = React.useState('');
+  const [inputError, setInputError] = React.useState('');
 
   function handleInputChange(event: React.ChangeEvent<HTMLInputElement>): void {
     setUserRepo(event.target.value);
@@ -17,6 +18,16 @@ export const Dashboard: React.FC = () => {
 
   async function handleSubmitForm(event: React.FormEvent<HTMLFormElement>): Promise<void> {
     event.preventDefault();
+
+    if (!userRepo) {
+      setInputError('Informe o username/repository_name');
+
+      // setTimeout(() => {
+      //   const elementError = document.getElementById('error');
+      //   elementError?.setAttribute('style', 'animation: show-down 1.5s forwards;');
+      // }, 6000);
+    }
+
     const response = await api.get<IGithubRepository>(`repos/${userRepo}`);
     const repository = response.data;
 
@@ -32,6 +43,9 @@ export const Dashboard: React.FC = () => {
       <Img src={logo} alt="Logo" title="Logo" />
 
       <Title>Catálogo de repositórios do Github</Title>
+
+      {inputError && <Error id="error">{inputError}</Error>}
+
       <Form onSubmit={handleSubmitForm}>
         <Input type="text" placeholder="username/repository_name" onChange={handleInputChange} />
         <Input type="submit" value="Search" />
