@@ -1,5 +1,21 @@
+# Set default behavior to automatically normalize line endings. > .gitattributes
 * text=auto
 *.sh text eol=lf
+*.cmd text eol=crlf
+*.bat text eol=crlf
+*.jpg  binary
+*.png  binary
+*.gif  binary
+*.html text=auto
+*.htm text=auto
+*.css text=auto
+*.scss text=auto
+*.sass text=auto
+*.less text=auto
+*.js text=auto
+*.jsx text=auto
+*.ts text=auto
+*.tsx text=auto
 
 # exclude this files and folders of exportation repository
 /.github export-ignore
