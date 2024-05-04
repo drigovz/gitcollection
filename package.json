@@ -1,9 +1,9 @@
 {
   "engineStrict": true,
   "engines": {
-    "node": "^18.13.0",
+    "node": "^20.11.0",
     "npm": "You must run Yarn on this project!",
-    "yarn": "^1.22.19"
+    "yarn": "^1.22.21"
   },
   "name": "gitcollection",
   "email": "rodrigodp2014@gmail.com",
